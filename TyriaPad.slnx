@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/TyriaPad.App/TyriaPad.App.csproj" />
+    <Project Path="src/TyriaPad.Core/TyriaPad.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/TyriaPad.Core.Tests/TyriaPad.Core.Tests.csproj" />
+  </Folder>
+</Solution>

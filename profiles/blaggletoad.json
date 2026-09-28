@@ -1,0 +1,149 @@
+{
+  // TyriaPad default profile: Blaggletoad v5.0 layout in Xbox notation.
+  // See docs/reference-layout.md. Can be edited with TyriaPad open: it reloads by itself.
+  //
+  // Buttons: A, B, X, Y, LB, RB, LT, RT, L3, R3, Menu, View, Up, Down, Left, Right and, on the Ally X,
+  //   the back buttons M1 and M2 (their codes are learned in the tray → "Learn Ally M1/M2").
+  // Layers: "base" or the modifiers joined with "+", e.g. "LB" or "LT+RT".
+  // Binding: a string is held while the button is pressed; an object accepts
+  //   "tap" (release before gestures.holdMs), "hold" (hold) and "double" (double tap).
+  // Actions: key ("1", "Space", "Shift+R"), "click:left|right|middle" (also "Alt+click:left"),
+  //   "wheel:up|down", "actionCamera" (toggles Action Camera <-> cursor), "radial:<name>".
+  // Keys are positions on a US keyboard: "`" is the key to the left of 1.
+  "name": "Blaggletoad v5.0",
+  "contexts": {
+    "combat": {
+      "leftStick": "move",
+      "rightStick": "camera",
+      "layers": {
+        "base": {
+          "RB": "1",
+          "RT": "2",
+          "L3": { "tap": "6", "hold": "radial:mounts" },
+          "X": "N",
+          "Y": { "tap": "F", "hold": "radial:masteries" },
+          "A": "Space",
+          "B": "V",
+          "R3": { "tap": "Tab", "hold": "Ctrl+T", "double": "T" },
+          "Up": "M",
+          "Right": "I",
+          "Down": "H",
+          "Left": { "tap": "Y", "hold": "radial:windows" },
+          "Menu": { "tap": "Esc", "hold": "actionCamera" },
+          "View": { "tap": "M", "hold": "." },
+          // What the Guide button does on Xbox in the reference layout: mount/dismount and mounts radial.
+          "M1": { "tap": "X", "hold": "radial:mounts" }
+        },
+        "LB": {
+          "RB": "3",
+          "RT": "4",
+          "LT": "5",
+          "X": "7",
+          "Y": "8",
+          "B": "9",
+          "A": "0",
+          "L3": "`",
+          "R3": "Ctrl+L",
+          "Menu": "wheel:up",
+          "View": "wheel:down"
+        },
+        "LT": {
+          "X": "F1",
+          "Y": "F2",
+          "B": "F3",
+          "A": "F4",
+          "Up": "F5",
+          "Right": "F6",
+          "Down": "F7",
+          "Left": "F8",
+          "R3": ";",
+          "LB": "5"
+        },
+        "LT+RT": {
+          "X": "F5",
+          "Y": "F6",
+          "B": "F7",
+          "A": "F8"
+        }
+      }
+    },
+    "mount": {
+      // Same as combat; X becomes mount skill 2 (descend, dive, drift).
+      "inherits": "combat",
+      "layers": {
+        "base": {
+          "X": "C"
+        }
+      }
+    },
+    "pointer": {
+      // Cursor visible: menus, vendors, inventory and map.
+      "leftStick": "pointer",
+      "rightStick": "pointer",
+      "layers": {
+        "base": {
+          "A": "click:left",
+          "RB": "click:left",
+          "L3": "click:left",
+          "R3": "click:right",
+          "LB": "click:right", // holding LB opens layer "LB"; releasing it right away does a right click
+          "X": { "tap": "click:right", "hold": "Enter" },
+          "B": "Esc",
+          "Y": "Alt+click:left",
+          "LT": "wheel:down",
+          "RT": "wheel:up",
+          "Menu": { "tap": "Esc", "hold": "actionCamera" },
+          "View": "M",
+          "Up": "M",
+          "Right": "I",
+          "Down": "H",
+          "Left": { "tap": "Y", "hold": "radial:windows" }
+        },
+        "LB": {
+          // Holding LB: the left stick moves the character; RB pings and R3 draws on the map.
+          "leftStick": "move",
+          "RB": "Shift+click:left",
+          "R3": "Shift+click:left"
+        }
+      }
+    }
+  },
+  "radials": {
+    "mounts": {
+      "stick": "right",
+      "items": [
+        { "label": "Raptor", "action": "Shift+R" },
+        { "label": "Springer", "action": "Shift+G" },
+        { "label": "Skimmer", "action": "Shift+C" },
+        { "label": "Jackal", "action": "Shift+V" },
+        { "label": "Griffon", "action": "Shift+N" },
+        { "label": "Roller Beetle", "action": "Shift+B" },
+        { "label": "Warclaw", "action": "Shift+L" },
+        { "label": "Skyscale", "action": "Shift+O" },
+        { "label": "Siege Turtle", "action": "Shift+T" }
+      ]
+    },
+    "masteries": {
+      "stick": "left",
+      "items": [
+        { "label": "Skyscale Leap", "action": "Shift+9" },
+        { "label": "Conjured Doorway", "action": "Shift+0" },
+        { "label": "Rift Scan", "action": "Shift+8" },
+        { "label": "Jade Bot Waypoint", "action": "Shift+7" },
+        { "label": "Fishing", "action": "Shift+E" },
+        { "label": "Skiff", "action": "Shift+F" }
+      ]
+    },
+    "windows": {
+      "stick": "right",
+      "items": [
+        { "label": "Hero", "action": "H" },
+        { "label": "Mail", "action": "Z" },
+        { "label": "Guild", "action": "G" },
+        { "label": "Social", "action": "Y" },
+        { "label": "Trading Post", "action": "O" },
+        { "label": "Pets", "action": "K" }
+      ]
+    }
+  }
+}

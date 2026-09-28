@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <UseWPF>true</UseWPF>
+    <!-- Only for NotifyIcon (tray icon); WPF doesn't have one of its own. -->
+    <UseWindowsForms>true</UseWindowsForms>
+    <RootNamespace>TyriaPad.App</RootNamespace>
+    <AssemblyName>TyriaPad</AssemblyName>
+    <!-- Per-monitor DPI: the overlay is placed in physical pixels over the GW2 window.
+         For WPF it's declared in the manifest; WFO0003 is the WinForms analyzer (only used for the
+         tray icon) asking for it to be done through its API, which doesn't apply here. -->
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+    <!-- Small tray program: no background GC thread, less memory. -->
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <!-- Only the English WPF/WinForms resources (the other languages weigh tens of MB). -->
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- .exe icon (Explorer, startup shortcut). Generated with scripts/make-icon.ps1. -->
+    <ApplicationIcon>Assets\TyriaPad.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The same icon for the tray and the settings window (AppIcon). -->
+    <EmbeddedResource Include="Assets\TyriaPad.ico" LogicalName="TyriaPad.App.TyriaPad.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Build time for the log: that way you know which version is running on the Ally. -->
+    <AssemblyMetadata Include="BuildTime" Value="$([System.DateTime]::Now.ToString('yyyy-MM-dd HH:mm'))" />
+  </ItemGroup>
+
+  <!-- Portable distribution: dotnet publish -c Release -r win-x64 (or scripts/publish.ps1). A
+       TyriaPad.exe that doesn't need .NET installed, plus the 5 native WPF DLLs next to it: if they
+       were inside, .NET would extract them to %TEMP%\.net and deleting the folder would no longer fully uninstall it.
+       No compression: the executable is bigger (the .zip makes up for it), but it's mapped from disk
+       instead of being decompressed into memory on every startup. -->
+  <PropertyGroup Condition="'$(RuntimeIdentifier)' != ''">
+    <SelfContained>true</SelfContained>
+    <PublishSingleFile>true</PublishSingleFile>
+    <IncludeNativeLibrariesForSelfExtract>false</IncludeNativeLibrariesForSelfExtract>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Avoids name clashes between WinForms/System.Drawing and WPF. -->
+    <Using Remove="System.Windows.Forms" />
+    <Using Remove="System.Drawing" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TyriaPad.Core\TyriaPad.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,74 @@
+{
+  // TyriaPad settings. Can be edited with the program open: it reloads by itself.
+  // Everything has a default value; just keep whatever you want to change.
+
+  // Button profile: profiles/<name>.json is loaded.
+  "profile": "blaggletoad",
+
+  // Key bound in GW2 to "Toggle Action Camera" (it has none by default).
+  "actionCameraKey": ",",
+
+  // GW2 keybinds, used to place the glyphs and warn about keys with no action. Read from the XML that
+  // GW2 exports to Documents\Guild Wars 2\InputBinds. After changing a bind you have to export again.
+  // "" = the most recently exported one, a file name or a path, or "none" = default keys.
+  "inputBinds": "",
+
+  // Switch mode according to the Windows cursor: visible = cursor, hidden = camera.
+  "followCursor": true,
+  "cursorDebounceMs": 80,
+  "manualGraceMs": 600,
+
+  // Use the cursor context while MumbleLink reports the map open.
+  "pointerWhenMapOpen": true,
+
+  // Close TyriaPad when GW2 closes. Does not apply if it was opened by Start with Windows (tray →
+  // "Start with Windows"): in that case it stays idle, without reading the controller, until you play again.
+  "exitWithGame": false,
+
+  "gestures": {
+    "holdMs": 250,        // from here on a press is "hold"
+    "doubleTapMs": 250,   // maximum time between taps for a double tap
+    "resyncMs": 1500,     // holding the Action Camera button until here resyncs the mode
+    "wheelRepeatMs": 200  // wheel rate while wheel:up/down is held
+  },
+
+  // Stick as camera (Action Camera): pixels per second at full tilt and curve (1 = linear).
+  "camera": { "speed": 1400, "exponent": 2 },
+
+  // Stick as cursor (menus).
+  "pointer": { "speed": 900, "exponent": 2 },
+
+  // Stick thresholds to press and release the movement keys.
+  "movement": { "pressThreshold": 0.5, "releaseThreshold": 0.4 },
+
+  // Stick deadzones (0-1) and trigger thresholds.
+  "input": {
+    "leftStickDeadzone": 0.24,
+    "rightStickDeadzone": 0.265,
+    "triggerPressThreshold": 0.3,
+    "triggerReleaseThreshold": 0.2,
+    // Xbox full screen experience: Windows doesn't give XInput to background apps, so the
+    // controller is read through Raw Input. There LT and RT share an axis: pressed together they cancel out (no LT+RT layer).
+    "rawInputFallback": true
+  },
+
+  // Overlay: controller glyphs over the skill bar, radial menus and mode indicator.
+  // The bar position is adjusted with "Calibrate overlay" in the tray (saved in calibration.json).
+  "overlay": {
+    "enabled": true,
+    "scale": 1,               // size of the glyphs relative to the slot
+    "opacity": 0.9,           // 0-1
+    "professionSlots": 5,     // F1…Fn slots that are drawn (0-8)
+    "hideWhenMapOpen": true,  // hide the glyphs with the map open
+    "indicator": "topRight",  // mode indicator: none, topLeft, topRight, bottomLeft, bottomRight
+    "radialRadius": 130       // radius of the radial menus, in pixels
+  },
+
+  // Ally X back buttons M1/M2, read over HID (read-only: the controller is not reprogrammed).
+  // Which code each one sends is learned in the tray → "Learn Ally M1/M2" and saved
+  // in allybuttons.json. In profiles they are used as "M1" and "M2".
+  "allyButtons": {
+    "enabled": true,
+    "releaseAfterMs": 150     // if a button doesn't report its release, it's considered released after this long without reports
+  }
+}

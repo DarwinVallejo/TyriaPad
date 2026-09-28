@@ -1,0 +1,27 @@
+<InputBindings>
+    <action name="Walk" id="8" device="Keyboard" button="12"/>
+    <action name="About Face" id="12" device="Keyboard" button="76" mod="2"/>
+    <action name="Toggle Action Camera" id="78" device="Keyboard" button="6"/>
+    <action name="Nearest Ally" id="37" device="Keyboard" button="14"/>
+    <action name="Mail Dialog" id="71" device="Keyboard" button="90"/>
+    <action name="PvP Panel" id="73" device="Keyboard" button="70" mod="6"/>
+    <action name="Raptor Mount/Dismount" id="155" device="Keyboard" button="82" mod="1"/>
+    <action name="Springer Mount/Dismount" id="156" device="Keyboard" button="71" mod="1"/>
+    <action name="Skimmer Mount/Dismount" id="157" device="Keyboard" button="67" mod="1"/>
+    <action name="Jackal Mount/Dismount" id="158" device="Keyboard" button="86" mod="1"/>
+    <action name="Griffon Mount/Dismount" id="159" device="Keyboard" button="78" mod="1"/>
+    <action name="Roller Beetle Mount/Dismount" id="161" device="Keyboard" button="66" mod="1"/>
+    <action name="Warclaw Mount/Dismount" id="169" device="Keyboard" button="76" mod="1"/>
+    <action name="Skyscale Mount/Dismount" id="170" device="Keyboard" button="79" mod="1"/>
+    <action name="Siege Turtle Mount/Dismount" id="203" device="Keyboard" button="84" mod="1"/>
+    <action name="Build Template 1" id="171" device="Keyboard" button="25"/>
+    <action name="Build Template 2" id="172" device="Keyboard" button="19"/>
+    <action name="Equipment Template 1" id="182" device="Keyboard" button="24"/>
+    <action name="Equipment Template 2" id="183" device="Keyboard" button="23"/>
+    <action name="Start Fishing" id="204" device="Keyboard" button="5" device2="Keyboard" button2="69" mod2="1"/>
+    <action name="Summon Skiff" id="205" device="Keyboard" button="70" mod="1"/>
+    <action name="Set Jade Bot Waypoint" id="206" device="Keyboard" button="55" mod="1"/>
+    <action name="Scan for Rift" id="207" device="Keyboard" button="56" mod="1"/>
+    <action name="Skyscale Leap" id="208" device="Keyboard" button="57" mod="1"/>
+    <action name="Conjured Doorway" id="211" device="Keyboard" button="48" mod="1"/>
+</InputBindings>

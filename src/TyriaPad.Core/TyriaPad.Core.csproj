@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>TyriaPad.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="TyriaPad.Core.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Default configuration and profile, built in so they can be created next to the executable if missing. -->
+    <EmbeddedResource Include="Defaults\config.json" LogicalName="TyriaPad.Defaults.config.json" />
+    <EmbeddedResource Include="..\..\profiles\blaggletoad.json" Link="Defaults\profiles\blaggletoad.json" LogicalName="TyriaPad.Defaults.profiles.blaggletoad.json" />
+  </ItemGroup>
+
+</Project>
