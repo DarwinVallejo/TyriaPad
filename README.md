@@ -1,3 +1,5 @@
+![TyriaPad](docs/images/banner.jpg)
+
 # TyriaPad
 
 Controller support for Guild Wars 2 with a ConsolePort-style glyph overlay, built for the ROG Ally X.
