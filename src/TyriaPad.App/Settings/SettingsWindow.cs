@@ -103,6 +103,21 @@ internal sealed class SettingsWindow : Window
 #pragma warning restore WPF0001
     }
 
+    /// <summary>
+    /// The Fluent theme leaves the window background transparent (Mica), which would turn into a transparent PNG
+    /// that looks black on dark pages. Uses a solid color that matches the theme instead.
+    /// </summary>
+    private static Brush OpaqueBackground(Window window)
+    {
+        if (window.Background is SolidColorBrush { Color.A: 255 } solid)
+        {
+            return solid;
+        }
+
+        bool darkText = window.Foreground is SolidColorBrush { Color: var c } && (c.R * 299 + c.G * 587 + c.B * 114) / 1000 < 128;
+        return new SolidColorBrush(darkText ? Color.FromRgb(0xF3, 0xF3, 0xF3) : Color.FromRgb(0x20, 0x20, 0x20));
+    }
+
     /// <summary>Saves each tab as a PNG, to review the design without opening the window (diagnostics).</summary>
     public static void Snapshot(ConfigStore config, string directory)
     {
@@ -126,7 +141,7 @@ internal sealed class SettingsWindow : Window
             var background = new DrawingVisual();
             using (DrawingContext dc = background.RenderOpen())
             {
-                dc.DrawRectangle(window.Background ?? Brushes.White, null, new Rect(0, 0, visual.ActualWidth, visual.ActualHeight));
+                dc.DrawRectangle(OpaqueBackground(window), null, new Rect(0, 0, visual.ActualWidth, visual.ActualHeight));
             }
 
             bitmap.Render(background);
