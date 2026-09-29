@@ -10,9 +10,20 @@ Controller support for Guild Wars 2 with a ConsolePort-style glyph overlay, buil
 
 > Status: version 0.1.0 (phase 6: settings window with a visual editor, start with Windows and a portable release). Works on the Windows desktop and, by reading the controller through Raw Input, in the Xbox full screen experience (tested on the Ally X; the LT+RT layer isn't available there). See [PLAN.md](PLAN.md).
 
-## Installation
+## Download
 
-Download the release .zip, extract it to a folder and open `TyriaPad.exe` (no need to install .NET). It shows up in the tray: double-click it to open the settings. To uninstall, turn off "Start with Windows" if you turned it on and delete the folder. Since the executable isn't signed, SmartScreen may warn you the first time ("More info" → "Run anyway").
+**[⬇ Download TyriaPad v0.1.0 (.zip)](https://github.com/DarwinVallejo/TyriaPad/releases/latest/download/TyriaPad-v0.1.0-win-x64.zip)** · [all releases](https://github.com/DarwinVallejo/TyriaPad/releases)
+
+No programming or installer needed:
+
+1. Download the .zip above.
+2. Right-click it → **Extract All…** and pick a folder of your own (for example `Documents\TyriaPad`).
+3. Open the extracted folder and double-click `TyriaPad.exe`. It doesn't need .NET or anything else installed.
+4. TyriaPad shows up in the system tray (next to the clock): double-click its icon to open the settings.
+
+Since the executable isn't signed, Windows SmartScreen may warn you the first time ("Windows protected your PC"): click **More info** → **Run anyway**. To uninstall, turn off "Start with Windows" if you turned it on and delete the folder.
+
+## Game and Ally X setup
 
 In GW2, set the game to Windowed Fullscreen and bind a key to "Toggle Action Camera" (`,` by default). On the Ally X, put Armoury Crate SE in Gamepad mode and turn off Steam Input for GW2 (see [docs/armoury-crate-se.md](docs/armoury-crate-se.md)).
 
