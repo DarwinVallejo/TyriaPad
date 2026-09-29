@@ -1,5 +1,11 @@
 ![TyriaPad](docs/images/banner.jpg)
 
+[![CI](https://img.shields.io/github/actions/workflow/status/DarwinVallejo/TyriaPad/ci.yml?branch=main&label=CI)](https://github.com/DarwinVallejo/TyriaPad/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/DarwinVallejo/TyriaPad)](https://github.com/DarwinVallejo/TyriaPad/releases/latest)
+[![License: MIT](https://img.shields.io/github/license/DarwinVallejo/TyriaPad)](LICENSE)
+![Windows 10/11](https://img.shields.io/badge/platform-Windows%2010%2F11-0078D6)
+![.NET 10](https://img.shields.io/badge/.NET-10-512BD4)
+
 # TyriaPad
 
 Controller support for Guild Wars 2 with a ConsolePort-style glyph overlay, built for the ROG Ally X.
